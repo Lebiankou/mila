@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Login/Sign Up</title>
+</head>
+<body>
+    <div class="login_background">
+        <div class="login_block">
+            <div class="toggle-buttons">
+                <button id="login-btn" class="login-btn active" >Log In</button>
+                <button id="signup-btn" class="signup-btn">Sign Up</button>
+            </div>
+            <div class="form-container">
+                <form id="login-form" class="active" >
+                <h2>Log In</h2>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" required>
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" required>
+                <button type="submit">Log In</button>
+            </form>
+            <form id="signup-form" class="singup nonactive">
+                <h2>Sign Up</h2>
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" required>
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" required>
+                <label for="signup-confirm-password">Confirm Password</label>
+                <input type="password" id="signup-confirm-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+            </div>
+        </div>            
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
