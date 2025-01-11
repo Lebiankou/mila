@@ -21,12 +21,20 @@
 }
 .toggle-buttons{
     display: flex;
+    margin-top:32px;
+    gap: 30px;
 }
+
+.form-container{
+    margin-top: 35px;
+}
+
 .login-btn, .signup-btn{
     font-family: Inter;
     font-size: 23px;
     color:grey;
     border:none;
+    background-color: white;
 }
 
 .login_button_active{
