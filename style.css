@@ -1,4 +1,57 @@
+/*########################Шрифты######################*/
+.font_label_login {
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+.font_placeholder_login {
+    color:black;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+.fornt_forgot_passwd {
+    color:#A4A4AA;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+input::placeholder{
+    color:#A4A4AA;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
 
+.font_button_login {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.14px;
+}
+
+/*####################################################*/
+
+body{
+    margin: 0px;
+}
 .login_background {
     font-family: "Inter", serif;
     display: flex;
@@ -7,28 +60,46 @@
     background: var(--3, linear-gradient(279deg, #3DD1F0 3.74%, #4B80FF 113.41%));
     height: 100vh;
 }
-
+/*основной блок*/
 .login_block{
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 496px;
-    height: 390px;
+    
+    min-width: 496px;
+    min-height: 390px;
+    
     flex-shrink: 0;
     border-radius: 22px;
     background: #FFF;
-    box-shadow: 0px 4px 17.2px 0px rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 4px 17.2px 0px rgba(0, 0, 0, 0.16);    
 }
+/*блок кнопок логин и синап*/
 .toggle-buttons{
     display: flex;
     margin-top:32px;
     gap: 30px;
+    
 }
-
-.form-container{
-    margin-top: 35px;
+/*блок формы ввода*/
+.form-container {
+    display: flex;
+    margin-top: 40px;
 }
-
+.login_form{
+    gap: 7px;
+}
+.login_input{
+    width: 409px;
+    height: 56px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--, #A4A4AA);
+}
+/*отступ текста полейсхолдера и инпута*/
+.font_placeholder_login {
+    padding-left: 20px; 
+}
 .login-btn, .signup-btn{
     font-family: Inter;
     font-size: 23px;
@@ -36,7 +107,24 @@
     border:none;
     background-color: white;
 }
+.forgot_passwd{
+    display: flex;
+    justify-content:space-between;
+}
+.checkbox{
+    margin-top: 15px;
+}
 
+.submit_btn{
+    margin:28px 0px;
+    align-self: center;
+    width: 432px;
+    height: 40px;
+    flex-shrink: 0; 
+    border-radius: 8px;
+    background-color:#9BB0FD;
+}
+/*класы для togggle js*/
 .login_button_active{
     
     color:black;
@@ -45,8 +133,6 @@
     border-bottom:5px solid #3069FF;
 
 }
-
-
 
 .active {
     display: flex;
