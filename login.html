@@ -14,11 +14,11 @@
         <div class="login_block">
             <div class="toggle-buttons">
                 <div class="wrapper_login_btn">
-                    <button id="login-btn" class="login-btn login_button_active" >Log In</button>
+                    <button id="login-btn" class="login-btn login_button_active font_button_login" >Log In</button>
                     <span class="underline_login_btn" id="underline_login"></span>
                 </div>
                 <div class="wrapper_login_btn">    
-                    <button id="signup-btn" class="signup-btn">Sign Up</button>
+                    <button id="signup-btn" class="signup-btn font_button_login">Sign Up</button>
                     <span class="" id="underline_signup"></span>
                 </div>    
             </div>
@@ -40,7 +40,7 @@
                                     <input type="password" id="login_password" class="login_input font_placeholder_login" required placeholder="Enter your password...">
                                     <a href="#" class="password-control" id="login_passwd_eye"></a>
                                 </div>   
-                                <button type="submit" class="font_button_login submit_btn">Log In</button>
+                                <button type="submit" class="font_button_login submit_btn login_btn">Log In</button>
                         </div>        
                             
                                    
@@ -50,16 +50,31 @@
             
             
                 <form id="signup-form" class="singup nonactive login_form">
-                <label for="signup-email" class="font_label_login">Email</label>
-                <input type="email" id="signup-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
-                <label for="signup-password" class="font_label_login">Password</label>
-                <input type="password" id="signup-password" class="login_input font_placeholder_login" placeholder="Confirm your password" required>
-                <label for="signup-confirm-password" class="font_label_login">Confirm Password</label>
-                <input type="password" id="signup-confirm-password" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
-                    <div class="checkbox">
-                        <input type="checkbox">I agree to the Terms of Service and Privacy Policy.</input>
+                <div class="wrapper_signup_email">
+                    <label for="signup-email" class="font_label_login">Email Address</label>
+                    <input type="email" id="signup-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
+                </div>        
+                <div class="wrapper_signup_passwd">
+                    <label for="signup-password" class="font_label_login">Password</label>
+                  <div class="wrapper_input_signup_passwd">  
+                    <input type="password" id="signup_password" class="login_input font_placeholder_login" placeholder="Enter your password..." required>
+                    <a id="signup_password_eye" class="signup-password_eye"></a>
                     </div>
-                <button type="submit" class="submit_btn font_button_login">Sign Up</button>
+                </div>
+                <div id="wrapper_signup_repeat_passwd">
+                    <label for="signup-confirm-password" class="font_label_login">Confirm Password</label>
+                    
+                    <div class="wrapper_signin_input_repeate_passwd">        
+                        <input type="password" id="signup_confirm_password" class="login_input font_placeholder_login" placeholder="Confirm your password" required>
+                        <a id="signup_confirm_password_eye" class="signup-confirm-password_eye"></a>
+                    </div>    
+                </div>    
+                    <div class="checkbox">
+                        <input type="checkbox"></input>
+                        <label class="checkbox_label">I agree to the <a>Terms of Service</a> and <a>Privacy Policy.</a></label>
+                    </div>
+                
+                    <button type="submit" class="submit_btn signin_btn font_button_login">Create an account</button>
             </form>
             </div>
         </div>            

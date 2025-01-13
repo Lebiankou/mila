@@ -38,6 +38,7 @@ signupBtn.addEventListener('click', () => {
     
 });
 
+//глазок пароля логина
 
 const login_passwd_eye = document.getElementById('login_passwd_eye');
 const login_password = document.getElementById('login_password');
@@ -51,6 +52,38 @@ login_passwd_eye.addEventListener('click', () => {
   }
 
     login_passwd_eye.classList.toggle('view');
+});
+
+//глазок пароля signuo
+
+const signup_password_eye = document.getElementById('signup_password_eye');
+const signup_password = document.getElementById('signup_password');
+
+signup_password_eye.addEventListener('click', () => {
+   
+  if (signup_password.type === 'password') {
+    signup_password.type = 'text';
+  } else {
+    signup_password.type = 'password';
+  }
+
+  signup_password_eye.classList.toggle('view');
+});
+
+// глазок повтора пароля 
+
+const signup_confirm_password_eye = document.getElementById('signup_confirm_password_eye');
+const signup_confirm_password = document.getElementById('signup_confirm_password');
+
+signup_confirm_password_eye.addEventListener('click', () => {
+   
+  if (signup_confirm_password.type === 'password') {
+    signup_confirm_password.type = 'text';
+  } else {
+    signup_confirm_password.type = 'password';
+  }
+
+  signup_confirm_password_eye.classList.toggle('view');
 });
 
 
