@@ -13,21 +13,43 @@
     <div class="login_background">
         <div class="login_block">
             <div class="toggle-buttons">
-                <button id="login-btn" class="login-btn login_button_active" >Log In</button>
-                <button id="signup-btn" class="signup-btn">Sign Up</button>
+                <div class="wrapper_login_btn">
+                    <button id="login-btn" class="login-btn login_button_active" >Log In</button>
+                    <span class="underline_login_btn" id="underline_login"></span>
+                </div>
+                <div class="wrapper_login_btn">    
+                    <button id="signup-btn" class="signup-btn">Sign Up</button>
+                    <span class="" id="underline_signup"></span>
+                </div>    
             </div>
             <div class="form-container">
                 <form id="login-form" class="active login_form">
-                    <label for="login-email" class="font_label_login">Email Address</label>
-                    <input type="email" id="login-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
-                    <div class="forgot_passwd">
-                        <label for="login-password" class="font_label_login">Password</label>
-                        <a class="fornt_forgot_passwd">Forgot password?</a>
-                    </div>
-                    <input type="password" id="login-password" class="login_input font_placeholder_login" required placeholder="Enter your password...">
-                    <button type="submit" class="font_button_login submit_btn">Log In</button>
+                    
+                        
+                  
+                        <label for="login-email" class="font_label_login">Email Address</label>
+                        <input type="email" id="login-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
+                    
+                        <div class="wrapper_passwd">
+                            <div class="forgot_passwd">
+                            <label for="login-password" class="font_label_login">Password</label>
+                            <a class="font_forgot_passwd forgot_passwd_underline">Forgot password?</a>
+                            </div>
+                        </div>
+                                <div class="wrapper_login_passwd_control">
+                                    <input type="password" id="login_password" class="login_input font_placeholder_login" required placeholder="Enter your password...">
+                                    <a href="#" class="password-control" id="login_passwd_eye"></a>
+                                </div>   
+                                <button type="submit" class="font_button_login submit_btn">Log In</button>
+                        </div>        
+                            
+                                   
                 </form>
-            <form id="signup-form" class="singup nonactive login_form">
+            
+            
+            
+            
+                <form id="signup-form" class="singup nonactive login_form">
                 <label for="signup-email" class="font_label_login">Email</label>
                 <input type="email" id="signup-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
                 <label for="signup-password" class="font_label_login">Password</label>
