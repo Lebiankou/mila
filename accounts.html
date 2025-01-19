@@ -18,24 +18,45 @@
                 <a class="logo_text">osmium</a>    <!-- лого текст -->
             </div>
             <div class="header_menu">
-                <div class="header_nav">
+                <ul class="header_nav">
+                    <li class="nav_option"><a class="nav_link_option" >FAQ</a></li>
+                    <li class="nav_option"><a class="nav_link_option" >Инструкции</a></li>
+                    <li class="nav_option"><a class="nav_link_option" >Тарифы</a></li>
+                    <li id="control" class="control_li"><div class="control"><span class="control_hover">Управление</span><span class="arrow"></span></div>
+                        <div id="control_options" class="wrap_celect nonactive">
+                            
+                                <ul class="celect">
+                                        <li class="ctrl_option"><div class="ctrl_option_img_accs ctrl_option_img"></div>Аккаунты</li>
+                                        <li class="ctrl_option"><div class="ctrl_option_img_promo ctrl_option_img"></div>Рекламники</li>
+                                        <li class="ctrl_option"><div class="ctrl_option_img_groups ctrl_option_img"></div>Группы</li>
+                                        <li class="ctrl_option"><div class="ctrl_option_img_shedle ctrl_option_img"></div>Расписания</li>
+                                        <li class="ctrl_option"><div class="ctrl_option_img_proxy ctrl_option_img"></div>Прокси</li>
+                                        <li class="ctrl_option"><div class="ctrl_option_img_report ctrl_option_img"></div>Отчеты</li>
+                                    </ul>
+                            
+                            
+                        </div>            
+                    </li>
+                </ul>
+                <!-- <div class="header_nav">
                     <a href="">FAQ</a>
                     <a href="">Инструкции</a>
                     <a href="">Тарифы</a>
                     <div class="menu">
                         <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
                         <label for="burger-checkbox" class="burger">Управление <span class="arrow">></span></label>
-                       <!-- <ul class="menu-list">
+                        <ul class="menu-list">
                           <li><a href="#" class="menu-item">Управление</a></li>
                           <li><a href="#" class="menu-item">Рекламники</a></li>
                           <li><a href="#" class="menu-item">Группы</a></li>
                           <li><a href="#" class="menu-item">Расписания</a></li>
-                        </ul> -->
+                        </ul> 
                       </div>
-                    </div>
+                    </div> -->
+                    <a class="plus_balance">Пополнение баланса</a>             <!-- пополнение баланса -->
+                    <div class="bell_img"></div>   <!-- колокольчик -->
                 </div>
-                <a>Пополнение баланса</a>             <!-- пополнение баланса -->
-                <div class="bell_img"></div>   <!-- колокольчик -->
+                
             </div>
         </div> 
         <div class="header_bottom_part"> <!--нижняя часть хедера-->
@@ -46,11 +67,15 @@
                 </div>
             <div class="acc_info">
                 <div class="acc_info_user">
-                   <h2></h2>
+                   <h2 class="user_name">Username</h2>
                    <div class="user_acc_id"></div>
-                   <span>ID:</span>
-                   <p class="user_id">8759411037</p> 
-                   <button></button> <!--копировать id-->
+                   <p class="wrapper_user_id">
+                        <span class="id">ID:</span>
+                        <span class="user_id">8759411037</span> 
+                        <a class="user_id_copy_btn"></a> <!--копировать id-->
+                   </p>
+                   <a class="tech_support">Тех. поддержка</a>
+                   
                 </div>
                 <div class="acc_info_history">
                    <div class="acc_info_proper">
@@ -64,6 +89,15 @@
                     <p class="quentity_telegram_accs">3/5</p>
                    </div> 
                 </div>
+                
+            </div>
+            <div class="nav_bar_repeter"> 
+                <ul class="nav_repeter_option_accs"    ><a class="nav_repeter_option_link" url="" >Аккаунты</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_promo"   ><a class="nav_repeter_option_link" url="" >Рекламники</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_groups"  ><a class="nav_repeter_option_link" url="" >Группы</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_schedule"><a class="nav_repeter_option_link" url="" >Расписания</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_proxy"   ><a class="nav_repeter_option_link" url="" >Прокси</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_report"  ><a class="nav_repeter_option_link" url="" >Отчеты</a></ul>
             </div>
         </div>
          
