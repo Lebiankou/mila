@@ -1,10 +1,12 @@
 
 html {
-  cursor: default;
+  cursor:grab;
 
 }
 body{
   margin: 0px;
+  min-width: 1000px;
+  
 }
 a{
   
@@ -40,6 +42,7 @@ ul {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  
 
 }
 .control_hover:hover {
@@ -216,7 +219,7 @@ ul {
   height: 240px;
   flex-shrink: 0;
   border-radius: 28px;
-  background: radial-gradient(433.54% 57.3% at 42.7% 50%, #33C5E5 0%, #56B4F8 56.83%, #3069FF 100%);
+  background: linear-gradient(to right, #33C5E5 0%, #56B4F8 57%, #3069FF 100%);
 
 }
 .acc_avatar{
@@ -341,7 +344,6 @@ line-height: normal;
 .nav_bar_repeter{
   margin: 25px 40px;
   border-bottom: #D9D9D9 1px solid;
-  
   display: flex;
   color: #A4A4AA;
   text-align: center;
@@ -350,19 +352,221 @@ line-height: normal;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  
 }
 
 .nav_repeter_option_accs:hover, .nav_repeter_option:hover{
   color: black;
-  
   border-bottom: #000 2px solid;
+
 }
+
 .nav_repeter_option_accs{
   padding-left: 0px;
   margin: 0px;
+  
 }
 .nav_repeter_option{
-  padding-bottom: 15px;
-  padding-left: 0px;
+  padding-left:0px;
   margin:0px 0px 0px 25px; 
+  
+}
+
+.nav_repeter_option,
+.nav_repeter_option_accs
+{
+  padding-bottom: 15px;
+  border-bottom: white 2px solid;
+}
+
+.display_none {
+  display: none;
+}
+
+.control_panel{
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  margin:0px 75px 0px 88px;
+
+}
+.accs_search-wrapper{
+  display: flex;
+  width: 100%;
+  position: relative;
+
+}
+.accs_search {
+  display: flex;
+  width: 100%;
+  outline: none; 
+  height: 40px;
+  text-indent: 18px;
+  text-align: left;
+  padding-left: 25px;
+}
+.accs_search::placeholder {
+  
+  text-align: left; /* Выравниваем текст плейсхолдера по левому краю */
+}
+.search_icon {
+  position: absolute;
+  left:15px;
+  top: 11px;
+  width: 18px;
+  height: 18px; 
+  background:no-repeat center url(/img/search_img.png)
+}
+.search:focus{
+  background-image:none;
+ }
+
+
+.add_button {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 159px;
+  height: 40px;
+  border-radius: 12px;
+  background-color: rgba(237, 237, 237, 1);
+  
+
+  
+}
+.accs_search,
+.add_button,
+.sort_select
+{
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-radius: 12px;
+  background-color: #F6F6F6;
+  border: 0px;
+}
+
+
+.sort_select {
+  position: relative;
+  display: inline-block;
+  max-width: 207px;
+  max-height: 40px;
+
+}
+
+.sort_btn {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f7f7f8;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sort_options{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.sort_options.show {
+  display: block;
+}
+
+.sort_options li {
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sort_options li:hover {
+  background-color: #f0f0f0;
+}
+
+.sort_options li.selected {
+  color: #007BFF;
+  font-weight: bold;
+  background-color: #f7f7f8;
+}
+
+.sort_btn span {
+  margin-right: 10px;
+}
+
+/* селектор сортировки */
+
+.sort_selecrtor,
+.sort_dropdown_toggle{
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+.sort_dropdown_menu{
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 207px;
+  list-style: none;
+  border-radius: 12px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.12);
+  width: 207px;
+  padding: 4px 0px;
+}
+  
+.sort_dropdown_toggle{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  
+  width: 207px;
+  height: 40px;
+  border: 0px;
+  border-radius: 9px;
+  background:#EDEDED
+}
+.vector {
+  width: 10px;
+  height: 7px;
+  background:no-repeat center url(/img/Vector.png) ;
+}
+.sort_dropdown_item{
+  display: flex;
+  align-items: center;
+  text-align: start;
+  box-sizing: border-box;
+  min-width: 199px;
+  height: 48px;
+  padding-left: 13px;
+}
+.sort_dropdown_item:hover{
+  color: #3069FF;
+  background: #F6F6F6;
+  border-radius: 9px;
+}
+.open {
+  display: flex;
 }
