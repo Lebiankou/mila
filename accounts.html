@@ -38,21 +38,6 @@
                         </div>            
                     </li>
                 </ul>
-                <!-- <div class="header_nav">
-                    <a href="">FAQ</a>
-                    <a href="">Инструкции</a>
-                    <a href="">Тарифы</a>
-                    <div class="menu">
-                        <input type="checkbox" id="burger-checkbox" class="burger-checkbox">
-                        <label for="burger-checkbox" class="burger">Управление <span class="arrow">></span></label>
-                        <ul class="menu-list">
-                          <li><a href="#" class="menu-item">Управление</a></li>
-                          <li><a href="#" class="menu-item">Рекламники</a></li>
-                          <li><a href="#" class="menu-item">Группы</a></li>
-                          <li><a href="#" class="menu-item">Расписания</a></li>
-                        </ul> 
-                      </div>
-                    </div> -->
                     <a class="plus_balance">Пополнение баланса</a>             <!-- пополнение баланса -->
                     <div class="bell_img"></div>   <!-- колокольчик -->
                 </div>
@@ -92,12 +77,12 @@
                 
             </div>
             <div class="nav_bar_repeter"> 
-                <ul class="nav_repeter_option_accs"    ><a class="nav_repeter_option_link" url="" >Аккаунты</a></ul>
-                <ul class="nav_repeter_option nav_repeter_option_promo"   ><a class="nav_repeter_option_link" url="" >Рекламники</a></ul>
-                <ul class="nav_repeter_option nav_repeter_option_groups"  ><a class="nav_repeter_option_link" url="" >Группы</a></ul>
-                <ul class="nav_repeter_option nav_repeter_option_schedule"><a class="nav_repeter_option_link" url="" >Расписания</a></ul>
-                <ul class="nav_repeter_option nav_repeter_option_proxy"   ><a class="nav_repeter_option_link" url="" >Прокси</a></ul>
-                <ul class="nav_repeter_option nav_repeter_option_report"  ><a class="nav_repeter_option_link" url="" >Отчеты</a></ul>
+                <ul class="nav_repeter_option_accs"                                    id="btn_accounts_div" style="border-color: black; color: black;"><a class="nav_repeter_option_link"  >Аккаунты</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_promo"                id="btn_promo_div"   ><a class="nav_repeter_option_link" url="" >Рекламники</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_groups"               id="btn_groups_div"  ><a class="nav_repeter_option_link" url="" >Группы</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_schedule"             id="btn_schedule_div"><a class="nav_repeter_option_link" url="" >Расписания</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_proxy"                id="btn_proxy_div"   ><a class="nav_repeter_option_link" url="" >Прокси</a></ul>
+                <ul class="nav_repeter_option nav_repeter_option_report"               id="btn_report_div"  ><a class="nav_repeter_option_link" url="" >Отчеты</a></ul>
             </div>
         </div>
     </header>
@@ -105,9 +90,9 @@
 
 
 
-    <div class="div_accs block" id="">
+    <div class="div_accs block" id="div_accs">
         <div class="control_panel">
-            <a class="add_button">Добавить аккаунт</a>
+            <a class="add_button" id="btn_div_accounts">Добавить аккаунт</a>
             
             <div class="accs_search-wrapper">
                 <span class="search_icon"></span>
@@ -126,27 +111,102 @@
          
         </div>
     </div>
-    <div class="div_promo display_none" id="">
-        <div class="control_panel">
-            <a class="add_button">Добавить рекламник</a>
+
+
+
+
+    <div class="div_promo" style="display: none" id="div_promo">
+            <div class="control_panel">
+                <a class="add_button" id="btn_div_promo">Добавить рекламник</a>
+                
+                <div class="accs_search-wrapper">
+                    <span class="search_icon"></span>
+                    <input type="text" placeholder="Название или описание" class="accs_search" />
+                </div>
+                
+                <div class="sort_selecrtor">
+                    <button id="sort_dropdown_toggle" class="sort_dropdown_toggle"><span id="sort_btn_name">Недавно добавленные</span> <div class="vector"></div></button>
+                        <ul id="sort_selecrtor"  class="sort_dropdown_menu">
+                        <li class="sort_dropdown_item active" data-sort="recent">Недавно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="old">Давно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="favorites">Избранные</li>
+                        <li class="sort_dropdown_item" data-sort="alphabetical">По алфавиту</li>
+                    </ul>
+                </div>
         </div>
+   
     </div>
-    <div class="div_groups display_none" id="">
+
+
+
+    <div class="div_groups" style="display: none" id="div_groups">
+        
+            <div class="control_panel">
+                <a class="add_button" id="btn_add_groups">Добавить группы</a>
+                
+                <div class="accs_search-wrapper">
+                    <span class="search_icon"></span>
+                    <input type="text" placeholder="Название или описание" class="accs_search" />
+                </div>
+                
+                <div class="sort_selecrtor">
+                    <button id="sort_dropdown_toggle" class="sort_dropdown_toggle"><span id="sort_btn_name">Недавно добавленные</span> <div class="vector"></div></button>
+                        <ul id="sort_selecrtor"  class="sort_dropdown_menu">
+                        <li class="sort_dropdown_item active" data-sort="recent">Недавно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="old">Давно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="favorites">Избранные</li>
+                        <li class="sort_dropdown_item" data-sort="alphabetical">По алфавиту</li>
+                    </ul>
+                </div>
+        
+    </div>
+    </div>
+
+
+
+
+    <div class="div_schedule" style="display: none" id="div_schedule">
+            <div class="control_panel">
+                <a class="add_button" id="btn_add_shredle">Добавить расписание</a>
+                
+                <div class="accs_search-wrapper">
+                    <span class="search_icon"></span>
+                    <input type="text" placeholder="Название или описание" class="accs_search" />
+                </div>
+                
+                <div class="sort_selecrtor">
+                    <button id="sort_dropdown_toggle" class="sort_dropdown_toggle"><span id="sort_btn_name">Недавно добавленные</span> <div class="vector"></div></button>
+                        <ul id="sort_selecrtor"  class="sort_dropdown_menu">
+                        <li class="sort_dropdown_item active" data-sort="recent">Недавно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="old">Давно добавленные</li>
+                        <li class="sort_dropdown_item" data-sort="favorites">Избранные</li>
+                        <li class="sort_dropdown_item" data-sort="alphabetical">По алфавиту</li>
+                    </ul>
+                </div>
+    </div>
+    </div>
+
+    <div class="div_proxy" style="display: none" id="div_proxy">
         <div class="control_panel">
-            <a class="add_button">Добавить группы</a>
-        </div>
+            <a class="add_button" id="btn_add_proxy">Добавить прокси</a>
+            
+            <div class="accs_search-wrapper">
+                <span class="search_icon"></span>
+                <input type="text" placeholder="Название или описание" class="accs_search" />
+            </div>
+            
+            <div class="sort_selecrtor">
+                <button id="sort_dropdown_toggle" class="sort_dropdown_toggle"><span id="sort_btn_name">Недавно добавленные</span> <div class="vector"></div></button>
+                    <ul id="sort_selecrtor"  class="sort_dropdown_menu">
+                    <li class="sort_dropdown_item active" data-sort="recent">Недавно добавленные</li>
+                    <li class="sort_dropdown_item" data-sort="old">Давно добавленные</li>
+                    <li class="sort_dropdown_item" data-sort="favorites">Избранные</li>
+                    <li class="sort_dropdown_item" data-sort="alphabetical">По алфавиту</li>
+                </ul>
+            </div>
+</div>
     </div>
-    <div class="div_schedule display_none" id="">
-        <div class="control_panel">
-            <a class="add_button">Добавить расписание</a>
-        </div>
-    </div>
-    <div class="div_proxy display_none" id="">
-        <div class="control_panel">
-            <a class="add_button">Добавить аккаунт</a>
-        </div>
-    </div>
-    <div class="div_report display_none" id="">
+    <div class="div_report" style="display: none" id="div_report">
     </div>
 
 

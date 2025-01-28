@@ -364,7 +364,7 @@ line-height: normal;
 .nav_repeter_option_accs{
   padding-left: 0px;
   margin: 0px;
-  
+ 
 }
 .nav_repeter_option{
   padding-left:0px;
@@ -427,7 +427,8 @@ line-height: normal;
   text-align: center;
   justify-content: center;
   align-items: center;
-  min-width: 159px;
+  text-wrap: nowrap;
+  padding: 0px 10px;
   height: 40px;
   border-radius: 12px;
   background-color: rgba(237, 237, 237, 1);
@@ -570,3 +571,6 @@ line-height: normal;
 .open {
   display: flex;
 }
+
+
+
