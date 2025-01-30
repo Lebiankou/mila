@@ -23,27 +23,46 @@
                 </div>    
             </div>
             <div class="form-container">
+                
+                
+                <!-- форма логина -->
+                
+                
                 <form id="login-form" class="active login_form">
+
+                        <!-- инпут логина  -->
                     
-                        
-                  
-                        <label for="login-email" class="font_label_login">Email Address</label>
-                        <input type="email" id="login-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
-                    
+                        <label for="login_email" class="font_label_login">Email Address</label>
+                        <input type="email" id="login_email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
+
+                        <!-- ошибка логина -->
+                        <div id="wrong_login"></div>
+
+
+                        <!-- забыл пароль     -->
+
                         <div class="wrapper_passwd">
                             <div class="forgot_passwd">
                             <label for="login-password" class="font_label_login">Password</label>
                             <a class="font_forgot_passwd forgot_passwd_underline">Forgot password?</a>
                             </div>
                         </div>
+
+                                <!-- пароль -->
+
                                 <div class="wrapper_login_passwd_control">
-                                    <input type="password" id="login_password" class="login_input font_placeholder_login" required placeholder="Enter your password...">
+                                    <input id="login_password"  type="password" class="login_input font_placeholder_login" required placeholder="Enter your password...">
                                     <a href="#" class="password-control" id="login_passwd_eye"></a>
-                                </div>   
-                                <button type="submit" class="font_button_login submit_btn login_btn">Log In</button>
+                                </div>  
+                              
+                              
+                                <!--  ошибка ввода пароля -->
+                                   <div id="wrong_passwd"></div> 
+
+                                <!-- кнопка отправки формы  -->
+                                
+                                <button id="login_submit" type="submit" class="font_button_login submit_btn login_btn">Log In</button>
                         </div>        
-                            
-                                   
                 </form>
             
             
