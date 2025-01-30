@@ -101,13 +101,15 @@ const wrongPasswd = document.getElementById('wrong_passwd');
 
 // Функция для проверки email
 function validateEmail(email) {
-    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zAZ0-9.-]+\.[a-zA-Z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     return emailPattern.test(email);
 }
 
-// Функция для проверки пароля (например, длина не менее 6 символов)
+// Функция для проверки пароля (длина не менее 6 символов и без кавычек)
 function validatePassword(password) {
-    return password.length >= 6;
+    if (password.length < 6) return false;  // Длина не менее 6 символов
+    if (/['"]/.test(password)) return false; // Проверка на кавычки
+    return true;
 }
 
 // Функция для активации/деактивации кнопки "Log In"
