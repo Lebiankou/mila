@@ -1,0 +1,242 @@
+/*########################Шрифты######################*/
+.font_label_login {
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+.font_placeholder_login {
+    color:black;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+.font_forgot_passwd {
+    text-decoration: underline;
+    color:#A4A4AA;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+input::placeholder{
+    color:#A4A4AA;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.12px;
+}
+
+.font_button_login {
+    color: #FFF;
+    text-align: center;
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.14px;
+}
+
+/*####################################################*/
+
+body{
+    margin: 0px;
+}
+.login_background {
+    font-family: "Inter", serif;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    background: var(--3, linear-gradient(279deg, #3DD1F0 3.74%, #4B80FF 113.41%));
+    height: 100vh;
+}
+/*основной блок*/
+.login_block{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    min-width: 496px;
+    min-height: 390px;
+    
+    flex-shrink: 0;
+    border-radius: 22px;
+    background: #FFF;
+    box-shadow: 0px 4px 17.2px 0px rgba(0, 0, 0, 0.16);    
+}
+/*блок кнопок логин и синап*/
+.toggle-buttons{
+    display: flex;
+    margin-top:32px;
+    gap: 35px;
+    
+}
+
+.wrapper_login_btn, .wrapper_singup_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/*блок формы ввода*/
+.form-container {
+    display: flex;
+    margin-top: 35px;
+}
+/*.login_form{
+    gap: 5px;
+}*/
+.login_input{
+    width: 407px;
+    height: 52px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    border: 1px solid var(--, #A4A4AA);
+}
+/*отступ текста полейсхолдера и инпута*/
+.font_placeholder_login {
+    padding-left: 20px; 
+}
+.login-btn, .signup-btn{
+    font-family: Inter;
+    font-size: 23px;
+    color:grey;
+    border:none;
+    background-color: white;
+}
+.login-btn:active + .underline_login_btn  {
+    border-bottom: 2px solid #000000;
+    width: 30px; 
+}
+
+.signup-btn {
+
+}
+.wrapper_passwd {
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+}
+
+.forgot_passwd{
+    display: flex;
+    justify-content:space-between;
+    
+}
+.wrapper_login_passwd_control,
+.wrapper_input_signup_passwd,
+.wrapper_signin_input_repeate_passwd
+{
+    display: flex;
+    position: relative;
+    margin-top: 4px;
+}
+.password-control,
+.signup-password_eye,
+.signup-confirm-password_eye
+{
+    align-self:center;
+    position: absolute;
+    left:89%;
+    bottom: 18px;
+    width: 25px;
+	height: 25px;
+	background: url(/img/eye-close-view.png) 0 0 no-repeat;
+}
+.password-control.view,
+.signup-password_eye.view,
+.signup-confirm-password_eye.view
+{
+    align-self:center;
+    position: absolute;
+    left:89%;
+    width: 25px;
+	height: 25px;
+	background: url(/img/open_eye.png) 0 0 no-repeat;
+}
+/*обертка для глаз*/
+
+.checkbox{
+    display: flex;
+    align-self:self-start;
+    
+}
+.checkbox_label{
+    margin-left: 13px;
+}
+.submit_btn{
+    border:none;
+    align-self: center;
+    width: 432px;
+    height: 40px;
+    flex-shrink: 0; 
+    border-radius: 8px;
+    background-color:#9BB0FD;
+}
+.login_btn{
+    margin:25px 0px;
+}
+.signin_btn{
+    margin:13px 0px 30px 0px;
+}
+
+.submit_btn:hover {
+    background-color:pink;
+    
+}
+
+
+/*Sigup форма*/
+.singup{
+    display: flex;
+    align-items:center;
+    align-self:center;
+    gap:21px;
+}
+
+.wrapper_signup_email,
+.wrapper_signup_passwd, 
+.wrapper_signup_repeat_passwd {
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+}
+
+.wrapper_signup_repeat_passwd {
+    position: relative;
+}
+/*класы для togggle js*/
+.login_button_active {
+    color:black;
+    border:none;
+    font-weight:bold;
+
+}
+
+/*подчеркивание*/
+
+.underline_login_btn, .underline_signup_btn{
+    width: 27px;    
+    border-bottom: 5px solid #3069FF;
+    border-radius: 12px;  
+}
+ 
+.active {
+    display: flex;
+    flex-direction:column;   
+}
+.nonactive {
+    display: none;
+}
