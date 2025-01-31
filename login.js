@@ -170,9 +170,7 @@ async function submitForm(event) {
         // Если сервер вернул успешный ответ
         if (response.ok) {
             const data = await response.json();
-            alert('Login successful!');
-            // Перенаправление после успешной авторизации
-            // window.location.href = '/dashboard';
+            window.location.href = '/accounts';
         } else {
             // Если ошибка, получаем данные ошибки от сервера
             const errorData = await response.json();
