@@ -215,117 +215,153 @@ document.addEventListener('DOMContentLoaded', () => {
     // Стили для ошибок
     const errorStyle = 'color: red; font-size: 12px;';
 
-    // Функция для проверки email
-    const validateEmail = (email) => {
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailPattern.test(email);
+    // Флаги использования полей
+    const touchedFields = {
+        email: false,
+        password: false,
+        confirmPassword: false,
+        checkbox: false,
     };
 
-    // Функция для проверки длины пароля
+    // Проверки
+    const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     const validatePasswordLength = (password) => password.length >= 6;
-
-    // Функция для проверки кавычек в пароле
     const validatePasswordQuotes = (password) => !/['"]/.test(password);
 
-    // Функция для проверки состояния формы
-    const validateForm = () => {
-        const isEmailValid = validateEmail(emailInput.value);
-        const isPasswordLengthValid = validatePasswordLength(passwordInput.value);
-        const isPasswordQuotesValid = validatePasswordQuotes(passwordInput.value);
-        const doPasswordsMatch = passwordInput.value === confirmPasswordInput.value;
-        const isCheckboxChecked = checkbox.checked;
-
-        // Включение/выключение кнопки
-        submitButton.disabled = !(
-            isEmailValid &&
-            isPasswordLengthValid &&
-            isPasswordQuotesValid &&
-            doPasswordsMatch &&
-            isCheckboxChecked
-        );
+    // Функция для показа ошибок
+    const showError = (field, errorElement, message) => {
+        errorElement.textContent = message;
+        errorElement.style = errorStyle;
+        if (!touchedFields[field]) touchedFields[field] = true; // Помечаем поле как "тронутое"
     };
 
-    // Валидация email при завершении ввода
-    emailInput.addEventListener('blur', () => {
-        emailError.textContent = validateEmail(emailInput.value)
-            ? ''
-            : 'Please enter a valid email address.';
-        emailError.style = errorStyle;
-    });
+    const clearError = (errorElement) => {
+        errorElement.textContent = '';
+    };
 
-    // Валидация пароля при завершении ввода
-    passwordInput.addEventListener('blur', () => {
-        if (!validatePasswordLength(passwordInput.value)) {
-            passwordError.textContent = 'Password must be at least 6 characters.';
-        } else if (!validatePasswordQuotes(passwordInput.value)) {
-            passwordError.textContent = 'Password must not contain single or double quotes.';
-        } else {
-            passwordError.textContent = '';
-        }
-        passwordError.style = errorStyle;
-    });
+    // Общая валидация формы
+    const validateForm = (showFirstError = false) => {
+        let isValid = true;
+        let firstInvalidField = null;
 
-    // Валидация подтверждения пароля при завершении ввода
-    confirmPasswordInput.addEventListener('blur', () => {
-        confirmPasswordError.textContent =
-            passwordInput.value === confirmPasswordInput.value
-                ? ''
-                : 'Passwords do not match.';
-        confirmPasswordError.style = errorStyle;
-    });
-
-    // Валидация чекбокса
-    checkbox.addEventListener('change', () => {
-        checkboxError.textContent = checkbox.checked ? '' : 'You must agree to the terms.';
-        checkboxError.style = errorStyle;
-    });
-
-    // Валидация формы при изменении полей
-    emailInput.addEventListener('input', validateForm);
-    passwordInput.addEventListener('input', validateForm);
-    confirmPasswordInput.addEventListener('input', validateForm);
-    checkbox.addEventListener('change', validateForm);
-
-    // Обработка отправки формы
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Проверка перед отправкой
-        validateForm();
-        if (submitButton.disabled) {
-            return;
-        }
-
-        // Данные для отправки
-        const formData = {
-            email: emailInput.value,
-            password: passwordInput.value,
-        };
-
-        try {
-            const response = await fetch('http://127.0.0.1:8000/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                const data = await response.json();
-                alert('Registration successful!');
-                // Перенаправление на другой URL (например, страницу входа)
-                // window.location.href = '/login';
+        // Проверка email
+        if (touchedFields.email || showFirstError) {
+            if (!validateEmail(emailInput.value)) {
+                isValid = false;
+                if (showFirstError && !firstInvalidField) firstInvalidField = emailInput;
+                showError('email', emailError, 'Please enter a valid email address.');
             } else {
-                const errorData = await response.json();
-                alert(errorData.detail || 'An unexpected error occurred.');
+                clearError(emailError);
             }
-        } catch (error) {
-            console.error('Error during registration:', error);
-            alert('An error occurred. Please try again later.');
+        }
+
+        // Проверка пароля
+        if (touchedFields.password || showFirstError) {
+            if (!validatePasswordLength(passwordInput.value)) {
+                isValid = false;
+                if (showFirstError && !firstInvalidField) firstInvalidField = passwordInput;
+                showError('password', passwordError, 'Password must be at least 6 characters.');
+            } else if (!validatePasswordQuotes(passwordInput.value)) {
+                isValid = false;
+                if (showFirstError && !firstInvalidField) firstInvalidField = passwordInput;
+                showError('password', passwordError, 'Password must not contain single or double quotes.');
+            } else {
+                clearError(passwordError);
+            }
+        }
+
+        // Проверка подтверждения пароля
+        if (touchedFields.confirmPassword || showFirstError) {
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                isValid = false;
+                if (showFirstError && !firstInvalidField) firstInvalidField = confirmPasswordInput;
+                showError('confirmPassword', confirmPasswordError, 'Passwords do not match.');
+            } else {
+                clearError(confirmPasswordError);
+            }
+        }
+
+        // Проверка чекбокса
+        if (touchedFields.checkbox || showFirstError) {
+            if (!checkbox.checked) {
+                isValid = false;
+                if (showFirstError && !firstInvalidField) firstInvalidField = checkbox;
+                showError('checkbox', checkboxError, 'You must agree to the terms.');
+            } else {
+                clearError(checkboxError);
+            }
+        }
+
+        if (showFirstError && firstInvalidField) {
+            firstInvalidField.focus(); // Ставим фокус на первое неверное поле
+        }
+
+        return isValid;
+    };
+
+    // Обработка сабмита
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const isValid = validateForm(true);
+        if (isValid) {
+            // Отправка данных на сервер
+            const formData = {
+                email: emailInput.value,
+                password: passwordInput.value,
+            };
+
+            fetch('http://127.0.0.1:8000/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            })
+                .then((response) => {
+                    if (response.ok) {
+                        alert('Registration successful!');
+                        // window.location.href = '/login'; // Перенаправление на другой URL
+                    } else {
+                        return response.json().then((errorData) => {
+                            alert(errorData.detail || 'An error occurred.');
+                        });
+                    }
+                })
+                .catch((err) => {
+                    console.error('Error during registration:', err);
+                    alert('An error occurred. Please try again later.');
+                });
         }
     });
 
-    // Инициализация
-    submitButton.disabled = true;
+    // Валидация при уходе из поля (blur)
+    emailInput.addEventListener('blur', () => {
+        touchedFields.email = true;
+        validateForm();
+    });
+
+    passwordInput.addEventListener('blur', () => {
+        touchedFields.password = true;
+        validateForm();
+    });
+
+    confirmPasswordInput.addEventListener('blur', () => {
+        touchedFields.confirmPassword = true;
+        validateForm();
+    });
+
+    checkbox.addEventListener('change', () => {
+        touchedFields.checkbox = true;
+        validateForm();
+    });
+
+    // Активация кнопки "Submit"
+    const handleInput = () => {
+        submitButton.disabled = !validateForm();
+    };
+
+    emailInput.addEventListener('input', handleInput);
+    passwordInput.addEventListener('input', handleInput);
+    confirmPasswordInput.addEventListener('input', handleInput);
+    checkbox.addEventListener('change', handleInput);
+
+    submitButton.disabled = true; // Изначально кнопка заблокирована
 });
