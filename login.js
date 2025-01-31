@@ -170,7 +170,7 @@ async function submitForm(event) {
         // Если сервер вернул успешный ответ
         if (response.ok) {
             const data = await response.json();
-            window.location.href = '/accounts';
+            window.location.href = '/accounts.html';
         } else {
             // Если ошибка, получаем данные ошибки от сервера
             const errorData = await response.json();
