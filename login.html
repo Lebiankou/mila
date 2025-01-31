@@ -42,7 +42,7 @@
                         <!-- забыл пароль     -->
 
                         <div class="wrapper_passwd">
-                            <div class="forgot_passwd">
+                           <div class="forgot_passwd">
                             <label for="login-password" class="font_label_login">Password</label>
                             <a class="font_forgot_passwd forgot_passwd_underline">Forgot password?</a>
                             </div>
@@ -66,35 +66,67 @@
                 </form>
             
             
-            
-            
+                        <!-- форма регистрации -->
+
                 <form id="signup-form" class="singup nonactive login_form">
                 <div class="wrapper_signup_email">
-                    <label for="signup-email" class="font_label_login">Email Address</label>
-                    <input type="email" id="signup-email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
-                </div>        
+                    <label for="signup_email" class="font_label_login">Email Address</label>
+                    
+                    <!-- инпут регистрации емаил -->
+                    
+                    <input type="email" id="signu_email" class="login_input font_placeholder_login" placeholder="Enter your email address..." required>
+                      
+                
+                
+                </div>    
+                <!-- ошибка    -->
+                <div id="reg_email_error"></div>   
                 <div class="wrapper_signup_passwd">
                     <label for="signup-password" class="font_label_login">Password</label>
                   <div class="wrapper_input_signup_passwd">  
+                    
+                    <!-- ипут регистрации пароля -->
+                    
                     <input type="password" id="signup_password" class="login_input font_placeholder_login" placeholder="Enter your password..." required>
-                    <a id="signup_password_eye" class="signup-password_eye"></a>
-                    </div>
+                     <a id="signup_password_eye" class="signup-password_eye"></a>
                 </div>
-                <div id="wrapper_signup_repeat_passwd">
+                </div>
+                
+                   <div id="reg_pass_error"></div> 
+
+                <div id="wrapper_signup_repeat_passwd" class="wrapper_signup_repeat_passwd">
                     <label for="signup-confirm-password" class="font_label_login">Confirm Password</label>
                     
-                    <div class="wrapper_signin_input_repeate_passwd">        
+                    <div id="wrapper_signin_input_repeate_passwd">        
+                        
+                        
+                        <!-- ипнут подтверждения пароля -->
+                        
                         <input type="password" id="signup_confirm_password" class="login_input font_placeholder_login" placeholder="Confirm your password" required>
+                    
+
                         <a id="signup_confirm_password_eye" class="signup-confirm-password_eye"></a>
-                    </div>    
+                    </div>  
+
                 </div>    
+                <div id="reg_comfirm_passwd_error"></div>
                     <div class="checkbox">
+                        
+                        <!-- чекбокс согласия с условиями сервиса -->
+                        
                         <input type="checkbox"></input>
+                            
+                        
                         <label class="checkbox_label">I agree to the <a>Terms of Service</a> and <a>Privacy Policy.</a></label>
+                    
                     </div>
-                
+                        <div id="checkbpx_error"></div>
+                            <!-- кнопка отправки формы. сабмит -->
+
                     <button type="submit" class="submit_btn signin_btn font_button_login">Create an account</button>
-            </form>
+
+           
+                </form>
             </div>
         </div>            
     </div>

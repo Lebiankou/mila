@@ -150,6 +150,7 @@ body{
     align-self:center;
     position: absolute;
     left:89%;
+    bottom: 18px;
     width: 25px;
 	height: 25px;
 	background: url(/img/eye-close-view.png) 0 0 no-repeat;
@@ -213,7 +214,9 @@ body{
     gap:8px;
 }
 
-
+.wrapper_signup_repeat_passwd {
+    position: relative;
+}
 /*класы для togggle js*/
 .login_button_active {
     color:black;
