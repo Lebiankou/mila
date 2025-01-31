@@ -153,7 +153,7 @@ async function submitForm(event) {
 
     // Собираем данные формы
     const formData = {
-        email: loginEmail.value,
+        username: loginEmail.value,
         password: loginPassword.value
     };
 
@@ -306,8 +306,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isValid) {
             // Отправка данных на сервер
             const formData = {
-                email: emailInput.value,
+                username: emailInput.value,
                 password: passwordInput.value,
+                password_confirm: confirmPasswordInput.value
+
             };
 
             fetch('http://127.0.0.1:8000/signup', {
